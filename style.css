@@ -1,0 +1,80 @@
+#titlepage h1 {
+    background-color: #00ff00;
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-size: 40px;
+    border: 3px solid #13C0BA;
+    text-align: center;
+    color: #553;
+    padding: 10px;
+}
+#wrapper {
+	overflow: hidden;
+}
+body {
+	background-color: #3333;
+	font-family: Segoe UI;
+}
+#buttonstyles {
+	text-align: center;
+	clear: both;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+#buttonstyles button {
+	margin-right: 10px;
+	background-color: #B0B0B0;
+	color: #555500;
+	border-radius: 3px;
+}
+
+
+
+.row {
+	clear: both;
+	margin-bottom: 20px;
+}
+#row1 .text  {
+	height: 200px;
+}
+#row2 .text {
+	height: 600px;
+}
+
+.text {
+	float: left;
+	width: 500px;
+	background-color: #999;
+	padding: 10px;
+    text-align: center;
+	margin-bottom: 15px;
+}
+#text1 {
+	margin-right: 15px;
+}
+#text2 {
+    
+}
+#text3 {
+    margin-right: 15px;
+}
+#text4 {
+    
+}
+
+
+#HeadingBTW {
+    float: left;
+    width: 500px;
+    text-align: center;
+}
+#HeadingSOM {
+    float: left;
+    width: 500px;
+    text-align:ce
+}
+
+
+
+

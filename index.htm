@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>ACCOUNTED</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+			<div id="titlepage">
+					 <h1>ACCOUNTED: speciaal gemaakt voor de boekhouders om hun werk lichter te maken!</h1>
+			</div>
+			<script language="JavaScript" type="text/javascript">
+<!--
+
+//Nieuwe datum en uur
+var d= new Date();
+var maand= d.getMonth() + 1;
+var dag= d.getDate();
+var jaar= d.getYear();
+
+var uur= d.getHours();
+var minutes= d.getMinutes();
+
+if (minutes < 10)
+{
+	minutes = "0" + minutes;
+}
+
+//Datum van vandaag
+document.write("<strong>" + dag + "-" + maand + "-2013 | " + uur + ":" + minutes + "<center>" + " Welkom bij ACCOUNTED! Met dit programma kan je allerlei verschillende opdrachten doen. Veel plezier! " + "</center></strong><BR><HR><BR>");
+
+//variabeledeclaratie
+var input, btw, btwinvoer, btw21, btw6;
+
+//invoer
+function btwBerekenen()
+{ 
+	//Bedrag en BTW vragen aan de gebruiker
+	input=prompt("Geef uw bedrag in:", "0");
+	input=parseFloat(input);
+	btwinvoer=prompt("Geef uw btw percent in", "0");
+	btwinvoer=parseInt(btwinvoer);
+	
+	//Verschillende BTW's
+	btw21=input*0.21;
+	btw6=input*0.06;
+	
+	//Berekenen
+	if (btwinvoer==21){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>€" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>€" + btw21 + "</strong>.";}
+	else {if (btwinvoer==6){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>€" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>€" + btw6 + "</strong>.";}
+	else{document.getElementById("text1").innerHTML="Btw-percent niet herkend. Herlaad de pagina en probeer opnieuw.";};};
+}
+
+//Bedragen optellen functie
+var som, bedrag1, bedrag2, bedrag3, bedrag4, bedrag5, bedrag6;
+
+function bedragenOptellen()
+{
+ bedrag1=prompt("Geef het eerste bedrag in");
+ bedrag1=parseFloat(bedrag1);
+ bedrag2=prompt("Geef het tweede bedrag in");
+ bedrag2=parseFloat(bedrag2);
+ bedrag3=prompt("Geef het derde bedrag in");
+ bedrag3=parseFloat(bedrag3);
+ bedrag4=prompt("Geef het vierde bedrag in");
+ bedrag4=parseFloat(bedrag4);
+ bedrag5=prompt("Geef het vijfde bedrag in");
+ bedrag5=parseFloat(bedrag5);
+ bedrag6=prompt("Geef het zesde bedrag in");
+ bedrag6=parseFloat(bedrag6);
+ 
+ som=bedrag1+bedrag2+bedrag3+bedrag4+bedrag5+bedrag6;
+ 
+ document.getElementById("text2").innerHTML="U gaf volgende bedragen in: <strong>€" + bedrag1 + ", €" + bedrag2 + ", €" + bedrag3 + ", €" + bedrag4 + ", €" + bedrag5 + ", €" + bedrag6 + "</strong>. De som van deze bedragen is <strong>€" + som + "</strong>.";
+}
+
+//Factuurbereking
+function berekeningFactuur() {
+
+  var btwprocent, basisbedrag, handelskorting, handelskortingbedrag, subtotaal1, kosten, subtotaal2, minfinancielekorting, subtotaal3, maatstafvanHeffing, btwbedrag, contantebetaling, plusfinancielekorting, nietcontantebetaling, financielekorting, financielekortingbedrag;
+	
+	//Enkele getallen vragen
+	basisbedrag=prompt("Geef uw basisbedrag in:");
+	basisbedrag=parseFloat(basisbedrag);
+	
+	handelskorting=prompt("Geef de handelskorting in (in procent!):");
+	handelskorting=parseInt(handelskorting);
+	
+	kosten=prompt("Geef de extra kosten in:");
+	kosten=parseFloat(kosten);
+	
+	financielekorting=prompt("Geef de financiële korting in (in procent!):");
+	financielekorting=parseInt(financielekorting);
+	
+	btwprocent=21;
+	
+	//De berekeningen
+	handelskortingbedrag=(basisbedrag/100)*handelskorting;
+	
+	subtotaal1=basisbedrag-handelskortingbedrag;
+	
+	subtotaal2=subtotaal1+kosten;
+	
+	financielekortingbedrag=(subtotaal2/100)*financielekorting;
+	
+	subtotaal3=subtotaal2-financielekortingbedrag;
+	
+	btwbedrag=(subtotaal3/100)*btwprocent;
+	
+	contantebetaling=subtotaal3+btwbedrag;
+	
+	nietcontantebetaling=contantebetaling+financielekortingbedrag;
+	
+	document.getElementById("text3").innerHTML="<strong>DE FACTUURBEREKENING</strong><BR><HR>Het basisbedrag is <strong>€" + basisbedrag + "</strong>, hiervan trekken we de handelskorting af van <strong>€" + handelskortingbedrag + "</strong> met als subtotaal <strong>€" + subtotaal1 + "</strong>.<BR><BR> Dan tellen we de kosten van <strong>€" + kosten + "</strong> er bij op, waardoor we <strong>€" + subtotaal2 + "</strong> uitkomen.<BR><BR> De financiele korting bedraagt <i>" + financielekorting + "%</i>, omgerekend in euro <strong>€" + financielekortingbedrag + "</strong>, waardoor we de maatstaf van Heffing uitkomen met als bedrag <strong>€" + subtotaal3 + "</strong>.<BR><BR> Dan tellen we de btw <strong>€" + btwbedrag + "</strong> erbij op en krijgen we als subtotaal <strong>€" + contantebetaling + "</strong>. Dit is het bedrag als de klant binnen de zoveel dagen betaalt.<BR><BR> Doet hij dat niet, dan tellen we de financiele korting van <strong>€" + financielekortingbedrag + "</strong> op bij ons bedrag en krijgen we als uitkomst <strong>€" + nietcontantebetaling + "</strong>.<BR><BR><BR><BR><BR><HR><strong>CONTANTE BETALING = €" + contantebetaling + "<BR>NIET-CONTANTE BETALING = €" + nietcontantebetaling + "</strong><HR>";
+																						  
+
+}
+
+//Rekeningen weergeven
+function stelselsRekeningen() {
+
+
+//Variabelen
+var input;
+
+//Rekeningstelsel vragen aan de gebruiker
+input=prompt("Geef de naam van het rekeningstelsel in:", "BV: Diensten en diverse goederen");
+
+if (input=="Diensten en diverse goederen") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>61000 huur en huurlasten<BR>61100 onderhoud en herstellingen<BR>61200 levering aan de onderneming<BR>61300 vergoeding aan derden<BR>61400 vervoer en aanverwante kosten<BR>61500 representatiekosten<BR>61600 communicatie<BR>61700 uitzendkrachten";}
+else {if (input=="Bezoldigingen en sociale lasten") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>41630 Voorschotten<BR>45300 Ingehouden bedrijfsvoorheffing<BR>45400 RSZ Werknemer<BR>45410 RSZ Werkgever<BR>45500 Bezoldigingen<BR>61331 Sociaal secretariaat<BR>62020 Bezoldigingen bedienden<BR>62030 Bezoldigingen arbeiders<BR>62100 Werkgeversbijdrage RSZ";}
+else {if (input=="Liquide middelen") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>55000 Bank<BR>56000 Bank van de post<BR>57000 Kassen<BR>58000 Interne overboekingen";}
+else {if (input=="Leningen op korte termijn") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>43000 KI schulden < 1 jaar<BR>65000 Kosten verbonden a schulden <i>(intrest)</i>";}
+else {if (input=="De btw-verrekening") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>41100 Terug te vorderen btw<BR>41110 Btw op aankopen<BR>41120 Btw op inkomende creditnota's<BR>45100 Te betalen btw<BR>45110 Btw op verkopen<BR>45120 Btw op uitgaande creditnota's";}
+else {document.getElementById("text4").innerHTML="Rekeningstelsel niet herkend. Herlaad de pagina en probeer opnieuw.";};};};};}
+
+}
+
+//-->
+</script>
+
+	<div id="wrapper">
+		 <div id="Buttonstyles">
+			<button onClick="btwBerekenen()" class="buttonstyle1">Btw berekenen</button>
+			<button onClick="bedragenOptellen()" class="buttonstyle2">Bedragen optellen</button>
+			<button onClick="berekeningFactuur()" class="buttonstyle3">Factuurberekening</button>
+			<button onClick="stelselsRekeningen()" class="buttonstyle4">Rekeningstelsels opzoeken</button>
+		 </div>
+		 
+		 <div id="row1" class="row">
+			 <div id="text1" class="text">
+				Hier komt je btw-bedrag!
+			 </div>
+			 
+			 <div id="text2" class="text">
+				Hier komt de som van je bedragen!
+			 </div>
+		 </div><!-- /ROW1 -->
+		 
+		 <div id="row2" class="row">
+			 <div id="text3" class="text">
+				Hier komt de berekening van je factuur!
+			 </div>
+			 
+			 <div id="text4" class="text">
+				Hier komt het rekeningstelsel!
+			 </div>
+		 </div><!-- /ROW2 -->
+	</div>
+	
+</body>
+</html>
