@@ -83,7 +83,7 @@ function berekeningFactuur() {
 	kosten=prompt("Geef de extra kosten in:");
 	kosten=parseFloat(kosten);
 	
-	financielekorting=prompt("Geef de financi�le korting in (in procent!):");
+	financielekorting=prompt("Geef de financiele korting in (in procent!):");
 	financielekorting=parseInt(financielekorting);
 	
 	btwprocent=21;
@@ -105,7 +105,7 @@ function berekeningFactuur() {
 	
 	nietcontantebetaling=contantebetaling+financielekortingbedrag;
 	
-	document.getElementById("text3").innerHTML="<strong>DE FACTUURBEREKENING</strong><BR><HR>Het basisbedrag is <strong>�" + basisbedrag + "</strong>, hiervan trekken we de handelskorting af van <strong>�" + handelskortingbedrag + "</strong> met als subtotaal <strong>�" + subtotaal1 + "</strong>.<BR><BR> Dan tellen we de kosten van <strong>�" + kosten + "</strong> er bij op, waardoor we <strong>�" + subtotaal2 + "</strong> uitkomen.<BR><BR> De financiele korting bedraagt <i>" + financielekorting + "%</i>, omgerekend in euro <strong>�" + financielekortingbedrag + "</strong>, waardoor we de maatstaf van Heffing uitkomen met als bedrag <strong>�" + subtotaal3 + "</strong>.<BR><BR> Dan tellen we de btw <strong>�" + btwbedrag + "</strong> erbij op en krijgen we als subtotaal <strong>�" + contantebetaling + "</strong>. Dit is het bedrag als de klant binnen de zoveel dagen betaalt.<BR><BR> Doet hij dat niet, dan tellen we de financiele korting van <strong>�" + financielekortingbedrag + "</strong> op bij ons bedrag en krijgen we als uitkomst <strong>�" + nietcontantebetaling + "</strong>.<BR><BR><BR><BR><BR><HR><strong>CONTANTE BETALING = �" + contantebetaling + "<BR>NIET-CONTANTE BETALING = �" + nietcontantebetaling + "</strong><HR>";
+	document.getElementById("text3").innerHTML="<strong>DE FACTUURBEREKENING</strong><BR><HR>Het basisbedrag is <strong>" + basisbedrag + "</strong>, hiervan trekken we de handelskorting af van <strong>" + handelskortingbedrag + "</strong> met als subtotaal <strong>" + subtotaal1 + "</strong>.<BR><BR> Dan tellen we de kosten van <strong>" + kosten + "</strong> er bij op, waardoor we <strong>" + subtotaal2 + "</strong> uitkomen.<BR><BR> De financiele korting bedraagt <i>" + financielekorting + "</i>, omgerekend in euro <strong>" + financielekortingbedrag + "</strong>, waardoor we de maatstaf van Heffing uitkomen met als bedrag <strong>" + subtotaal3 + "</strong>.<BR><BR> Dan tellen we de btw <strong>" + btwbedrag + "</strong> erbij op en krijgen we als subtotaal <strong>" + contantebetaling + "</strong>. Dit is het bedrag als de klant binnen de zoveel dagen betaalt.<BR><BR> Doet hij dat niet, dan tellen we de financiele korting van <strong>" + financielekortingbedrag + "</strong> op bij ons bedrag en krijgen we als uitkomst <strong>" + nietcontantebetaling + "</strong>.<BR><BR><BR><BR><BR><HR><strong>CONTANTE BETALING = " + contantebetaling + "<BR>NIET-CONTANTE BETALING = " + nietcontantebetaling + "</strong><HR>";
 																						  
 
 }
