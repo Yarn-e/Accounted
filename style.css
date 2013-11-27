@@ -17,13 +17,33 @@ body {
 	overflow: hidden;
 }
 #buttonstyles {
-	text-align: center;
 	clear: both;
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
+	border-radius: 3px;
+	width: 1000px;
+}
+.buttonstyle1  {
+	margin-right: 10px;
+	background-color: #B0B0B0;
+	color: #E5E5CC;
+	border-radius: 3px;
+	margin-bottom: 50px;
+	margin-left: 550px;
+}
+.buttonstyle2  {
+	margin-right: 10px;
+	background-color: #B0B0B0;
+	color: #E5E5CC;
 	border-radius: 3px;
 }
-#buttonstyles button {
+.buttonstyle3  {
+	margin-right: 10px;
+	background-color: #B0B0B0;
+	color: #E5E5CC;
+	border-radius: 3px;
+}
+.buttonstyle4  {
 	margin-right: 10px;
 	background-color: #B0B0B0;
 	color: #E5E5CC;
@@ -69,21 +89,21 @@ body {
 	margin-left: 50px;
 	float: left;
 	width: 500px;
-	background-color: #BFBFAA;
+	background-color: #7F7962;
 	padding: 10px;
 	text-align: center;
 	margin-bottom: 15px;
-	border: 2.5px solid #404039;
-	border-radius: 3px;
+	border: 10px solid #333127;
+	border-radius: 6px;
 }
 .Edit {
 	float: left;
 	width: 500px;
-	background-color: #BFBFAA;
+	background-color: #7F7962;
 	padding: 10px;
 	text-align: center;
 	margin-bottom: 15px;
-	border: 2.5px solid #404039;
+	border: 5px solid #333127;
 	border-radius: 3px;
 }
 #HeadingBTW {
