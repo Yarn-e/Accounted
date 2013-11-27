@@ -2,6 +2,7 @@ body {
 	font-family: Segoe UI;
 	background-color:#7F7F72
 }
+
 #titlepage h1 {
 	background-color: #404039;
 	font-family: Segoe UI;
@@ -56,13 +57,13 @@ body {
 	margin-right: 15px;
 }
 #text2 {
-    
+	
 }
 #text3 {
 	margin-right: 15px;
 }
 #text4 {
-    
+	
 }
 .textRek {
 	margin-left: 50px;
@@ -85,8 +86,6 @@ body {
 	border: 2.5px solid #404039;
 	border-radius: 3px;
 }
-
-
 #HeadingBTW {
 	float: left;
 	width: 500px;
