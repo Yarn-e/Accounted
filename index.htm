@@ -46,33 +46,27 @@ function btwBerekenen()
 	btw6=input*0.06;
 	
 	//Berekenen
-	if (btwinvoer==21){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>€" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>€" + btw21 + "</strong>.";}
-	else {if (btwinvoer==6){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>€" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>€" + btw6 + "</strong>.";}
+	if (btwinvoer==21){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>ï¿½" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>ï¿½" + btw21 + "</strong>.";}
+	else {if (btwinvoer==6){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>ï¿½" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>ï¿½" + btw6 + "</strong>.";}
 	else{document.getElementById("text1").innerHTML="Btw-percent niet herkend. Herlaad de pagina en probeer opnieuw.";};};
 }
 
 //Bedragen optellen functie
-var som, bedrag1, bedrag2, bedrag3, bedrag4, bedrag5, bedrag6;
 
 function bedragenOptellen()
-{
- bedrag1=prompt("Geef het eerste bedrag in");
- bedrag1=parseFloat(bedrag1);
- bedrag2=prompt("Geef het tweede bedrag in");
- bedrag2=parseFloat(bedrag2);
- bedrag3=prompt("Geef het derde bedrag in");
- bedrag3=parseFloat(bedrag3);
- bedrag4=prompt("Geef het vierde bedrag in");
- bedrag4=parseFloat(bedrag4);
- bedrag5=prompt("Geef het vijfde bedrag in");
- bedrag5=parseFloat(bedrag5);
- bedrag6=prompt("Geef het zesde bedrag in");
- bedrag6=parseFloat(bedrag6);
- 
- som=bedrag1+bedrag2+bedrag3+bedrag4+bedrag5+bedrag6;
- 
- document.getElementById("text2").innerHTML="U gaf volgende bedragen in: <strong>€" + bedrag1 + ", €" + bedrag2 + ", €" + bedrag3 + ", €" + bedrag4 + ", €" + bedrag5 + ", €" + bedrag6 + "</strong>. De som van deze bedragen is <strong>€" + som + "</strong>.";
-}
+	{
+		var aantal= parseInt(prompt("Hoeveel getallen wilt u ingeven"));
+		var som = 0; 
+		var i, allegetallen="";
+
+			for (i=1; i<=aantal; i++)
+				{
+			 		var getal=parseInt(prompt("Geef getal "+i+": "));
+					allegetalen= allegetallen + "getal "+i+"= "+getal+"<br>";
+					som +=getal;
+				}
+				document.write("De som van de getallen is: "+som+" <br> ");
+	}
 
 //Factuurbereking
 function berekeningFactuur() {
@@ -89,7 +83,7 @@ function berekeningFactuur() {
 	kosten=prompt("Geef de extra kosten in:");
 	kosten=parseFloat(kosten);
 	
-	financielekorting=prompt("Geef de financiële korting in (in procent!):");
+	financielekorting=prompt("Geef de financiï¿½le korting in (in procent!):");
 	financielekorting=parseInt(financielekorting);
 	
 	btwprocent=21;
@@ -111,7 +105,7 @@ function berekeningFactuur() {
 	
 	nietcontantebetaling=contantebetaling+financielekortingbedrag;
 	
-	document.getElementById("text3").innerHTML="<strong>DE FACTUURBEREKENING</strong><BR><HR>Het basisbedrag is <strong>€" + basisbedrag + "</strong>, hiervan trekken we de handelskorting af van <strong>€" + handelskortingbedrag + "</strong> met als subtotaal <strong>€" + subtotaal1 + "</strong>.<BR><BR> Dan tellen we de kosten van <strong>€" + kosten + "</strong> er bij op, waardoor we <strong>€" + subtotaal2 + "</strong> uitkomen.<BR><BR> De financiele korting bedraagt <i>" + financielekorting + "%</i>, omgerekend in euro <strong>€" + financielekortingbedrag + "</strong>, waardoor we de maatstaf van Heffing uitkomen met als bedrag <strong>€" + subtotaal3 + "</strong>.<BR><BR> Dan tellen we de btw <strong>€" + btwbedrag + "</strong> erbij op en krijgen we als subtotaal <strong>€" + contantebetaling + "</strong>. Dit is het bedrag als de klant binnen de zoveel dagen betaalt.<BR><BR> Doet hij dat niet, dan tellen we de financiele korting van <strong>€" + financielekortingbedrag + "</strong> op bij ons bedrag en krijgen we als uitkomst <strong>€" + nietcontantebetaling + "</strong>.<BR><BR><BR><BR><BR><HR><strong>CONTANTE BETALING = €" + contantebetaling + "<BR>NIET-CONTANTE BETALING = €" + nietcontantebetaling + "</strong><HR>";
+	document.getElementById("text3").innerHTML="<strong>DE FACTUURBEREKENING</strong><BR><HR>Het basisbedrag is <strong>ï¿½" + basisbedrag + "</strong>, hiervan trekken we de handelskorting af van <strong>ï¿½" + handelskortingbedrag + "</strong> met als subtotaal <strong>ï¿½" + subtotaal1 + "</strong>.<BR><BR> Dan tellen we de kosten van <strong>ï¿½" + kosten + "</strong> er bij op, waardoor we <strong>ï¿½" + subtotaal2 + "</strong> uitkomen.<BR><BR> De financiele korting bedraagt <i>" + financielekorting + "%</i>, omgerekend in euro <strong>ï¿½" + financielekortingbedrag + "</strong>, waardoor we de maatstaf van Heffing uitkomen met als bedrag <strong>ï¿½" + subtotaal3 + "</strong>.<BR><BR> Dan tellen we de btw <strong>ï¿½" + btwbedrag + "</strong> erbij op en krijgen we als subtotaal <strong>ï¿½" + contantebetaling + "</strong>. Dit is het bedrag als de klant binnen de zoveel dagen betaalt.<BR><BR> Doet hij dat niet, dan tellen we de financiele korting van <strong>ï¿½" + financielekortingbedrag + "</strong> op bij ons bedrag en krijgen we als uitkomst <strong>ï¿½" + nietcontantebetaling + "</strong>.<BR><BR><BR><BR><BR><HR><strong>CONTANTE BETALING = ï¿½" + contantebetaling + "<BR>NIET-CONTANTE BETALING = ï¿½" + nietcontantebetaling + "</strong><HR>";
 																						  
 
 }
