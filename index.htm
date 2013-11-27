@@ -46,8 +46,8 @@ function btwBerekenen()
 	btw6=input*0.06;
 	
 	//Berekenen
-	if (btwinvoer==21){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>�" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>�" + btw21 + "</strong>.";}
-	else {if (btwinvoer==6){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>�" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "%</strong>, de btw hiervan bedraagt <strong>�" + btw6 + "</strong>.";}
+	if (btwinvoer==21){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "</strong>, de btw hiervan bedraagt <strong>" + btw21 + "</strong>.";}
+	else {if (btwinvoer==6){document.getElementById("text1").innerHTML="Uw ingevoerde bedrag is <strong>" + input + "</strong> en uw btw-percent <strong>" + btwinvoer + "</strong>, de btw hiervan bedraagt <strong>" + btw6 + "</strong>.";}
 	else{document.getElementById("text1").innerHTML="Btw-percent niet herkend. Herlaad de pagina en probeer opnieuw.";};};
 }
 

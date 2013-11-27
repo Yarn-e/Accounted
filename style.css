@@ -52,6 +52,9 @@ body {
 	padding: 10px;
     text-align: center;
 	margin-bottom: 15px;
+	border: 2.5px solid #404039;
+	border-radius: 3px;
+	
 }
 #text1 {
 	margin-right: 15px;
@@ -83,6 +86,8 @@ float: left;
 	padding: 10px;
     text-align: center;
 	margin-bottom: 15px;
+	border: 2.5px solid #404039;
+	border-radius: 3px;
 }
 
 
