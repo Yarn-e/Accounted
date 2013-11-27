@@ -1,11 +1,11 @@
 #titlepage h1 {
-    background-color: #F26818;
+    background-color: #404039;
     font-family: Segoe UI;
     font-weight: bold;
     font-size: 40px;
-    border: 3px solid #9F4816;
+    border: 2.5px solid #BFBFAA;
     text-align: center;
-    color: #553;
+    color: #E5E5CC;
     padding: 10px;
 }
 #wrapper {
@@ -13,6 +13,7 @@
 }
 body {
 	font-family: Segoe UI;
+	background-color:#7F7F72
 }
 #buttonstyles {
 	text-align: center;
@@ -24,7 +25,7 @@ body {
 #buttonstyles button {
 	margin-right: 10px;
 	background-color: #B0B0B0;
-	color: #555500;
+	color: #E5E5CC;
 	border-radius: 3px;
 }
 
@@ -40,11 +41,14 @@ body {
 #row2 .text {
 	height: 600px;
 }
+#row3 .Edit {
+	height: 1000px
+}
 
 .text {
 	float: left;
 	width: 500px;
-	background-color: #999;
+	background-color: #BFBFAA;
 	padding: 10px;
     text-align: center;
 	margin-bottom: 15px;
@@ -60,6 +64,15 @@ body {
 }
 #text4 {
     
+}
+
+.Edit {
+float: left;
+	width: 500px;
+	background-color: #BFBFAA;
+	padding: 10px;
+    text-align: center;
+	margin-bottom: 15px;
 }
 
 
