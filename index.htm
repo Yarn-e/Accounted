@@ -55,13 +55,13 @@ function btwBerekenen()
 
 function bedragenOptellen()
 	{
-		var aantal= parseInt(prompt("Hoeveel getallen wilt u ingeven"));
+		var aantal= parseInt(prompt("Hoeveel bedragen wil u ingeven?"));
 		var som = 0; 
 		var i, allegetallen="";
 
 			for (i=1; i<=aantal; i++)
 				{
-			 		var getal=parseInt(prompt("Geef getal "+i+": "));
+			 		var getal=parseInt(prompt("Geef bedrag "+i+": "));
 					allegetalen= allegetallen + "getal "+i+"= "+getal+"<br>";
 					som +=getal;
 				}
