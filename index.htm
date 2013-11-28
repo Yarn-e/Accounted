@@ -123,12 +123,78 @@ input=prompt("Geef de naam van het rekeningstelsel in:", "BV: Diensten en divers
 if (input=="Diensten en diverse goederen") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>61000 huur en huurlasten<BR>61100 onderhoud en herstellingen<BR>61200 levering aan de onderneming<BR>61300 vergoeding aan derden<BR>61400 vervoer en aanverwante kosten<BR>61500 representatiekosten<BR>61600 communicatie<BR>61700 uitzendkrachten";}
 else {if (input=="Bezoldigingen en sociale lasten") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>41630 Voorschotten<BR>45300 Ingehouden bedrijfsvoorheffing<BR>45400 RSZ Werknemer<BR>45410 RSZ Werkgever<BR>45500 Bezoldigingen<BR>61331 Sociaal secretariaat<BR>62020 Bezoldigingen bedienden<BR>62030 Bezoldigingen arbeiders<BR>62100 Werkgeversbijdrage RSZ";}
 else {if (input=="Liquide middelen") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>55000 Bank<BR>56000 Bank van de post<BR>57000 Kassen<BR>58000 Interne overboekingen";}
-else {if (input=="Leningen op korte termijn") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>43000 KI schulden < 1 jaar<BR>65000 Kosten verbonden a schulden <i>(intrest)</i>";}
+else {if (input=="Leningen op korte termijn") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>43000 KI schulden < 1 jaar<BR>65000 Kosten verbonden aan schulden";}
 else {if (input=="De btw-verrekening") {document.getElementById("text4").innerHTML="<center><strong><BR>" + input + "</center></strong><BR><BR>41100 Terug te vorderen btw<BR>41110 Btw op aankopen<BR>41120 Btw op inkomende creditnota's<BR>45100 Te betalen btw<BR>45110 Btw op verkopen<BR>45120 Btw op uitgaande creditnota's";}
 else {document.getElementById("text4").innerHTML="Rekeningstelsel niet herkend. Herlaad de pagina en probeer opnieuw.";};};};};}
 
 }
+//Intrest berekenen
+function berekenenIntrest() {
 
+//Variabelen
+var keuze, kapitaal, intrestvoet, tijd;
+
+//Gegevens vragen aan de gebruiker
+keuze = prompt("Jaren, Maanden of Dagen?", "kies een van de drie");
+
+if (keuze == "Jaren")
+{
+	kapitaal = prompt("Geef het kapitaal in:", "kapitaal");
+	kapitaal = parseFloat(kapitaal);
+	intrestvoet = prompt("Geef de intrestvoet in:", "intrestvoet");
+	intrestvoet = parseFloat(intrestvoet);
+	tijd = prompt("Geef de tijd in (in jaren!):", "tijd");
+	tijd = parseFloat(tijd);
+	
+	intrestJaren = (kapitaal*intrestvoet*tijd)/100;
+	intrestJaren = parseFloat(intrestJaren);
+	bedragBetalen = kapitaal+intrestJaren;
+	bedragBetalen = parseFloat(bedragBetalen);
+	
+	document.getElementById("text6").innerHTML="<strong>" + "INTRESTBEREKENING" + "</strong><BR><BR>" + "<strong>" + "Geleende bedrag = " + "</strong>" + kapitaal + "<BR><strong>" + "Intrest = " + "</strong>" + intrestJaren + "<BR><strong>" + "Te betalen bedrag = " + "</strong>" + bedragBetalen;
+}
+else
+{
+	if (keuze == "Maanden") 
+	{
+		kapitaal = prompt("Geef het kapitaal in:", "kapitaal");
+		kapitaal = parseFloat(kapitaal);
+		intrestvoet = prompt("Geef de intrestvoet in:", "intrestvoet");
+		intrestvoet = parseFloat(intrestvoet);
+		tijd = prompt("Geef de tijd in (in maanden!):", "tijd");
+		tijd = parseFloat(tijd);
+	
+		intrestMaanden = (kapitaal*intrestvoet*tijd)/1200;
+		intrestMaanden = parseFloat(intrestMaanden);
+		bedragBetalen = kapitaal+intrestMaanden;
+		bedragBetalen = parseFloat(bedragBetalen);
+	
+		document.getElementById("text6").innerHTML="<strong>" + "INTRESTBEREKENING" + "</strong><BR><BR>" + "<strong>" + "Geleende bedrag = " + "</strong>" + kapitaal + "<BR><strong>" + "Intrest = " + "</strong>" + intrestMaanden + "<BR><strong>" + "Te betalen bedrag = " + "</strong>" + bedragBetalen;
+	}
+else
+{
+	if (keuze == "Dagen")
+	{
+		kapitaal = prompt("Geef het kapitaal in:", "kapitaal");
+		kapitaal = parseFloat(kapitaal);
+		intrestvoet = prompt("Geef de intrestvoet in:", "intrestvoet");
+		intrestvoet = parseFloat(intrestvoet);
+		tijd = prompt("Geef de tijd in (in dagen!):", "tijd");
+		tijd = parseFloat(tijd);
+	
+		intrestDagen = (kapitaal*intrestvoet*tijd)/36000;
+		intrestDagen = parseFloat(intrestDagen);
+		bedragBetalen = kapitaal+intrestDagen;
+		bedragBetalen = parseFloat(bedragBetalen);
+	
+		document.getElementById("text6").innerHTML="<BR><strong>" + "INTRESTBEREKENING" + "</strong><BR><BR>" + "<strong>" + "Geleende bedrag = " + "</strong>" + kapitaal + "<BR><strong>" + "Intrest = " + "</strong>" + intrestDagen + "<BR><strong>" + "Te betalen bedrag = " + "</strong>" + bedragBetalen;
+	}
+else
+{
+document.getElementById("text6").innerHTML="Ongeldige input. Herlaad de pagina en probeer opnieuw!";
+};};}
+
+}
 //-->
 </script>
 
@@ -137,7 +203,8 @@ else {document.getElementById("text4").innerHTML="Rekeningstelsel niet herkend. 
 			<button onClick="btwBerekenen()" class="buttonstyle">Btw berekenen</button>
 			<button onClick="bedragenOptellen()" class="buttonstyle">Bedragen optellen</button>
 			<button onClick="berekeningFactuur()" class="buttonstyle">Factuurberekening</button>
-			<button onClick="stelselsRekeningen()" class="buttonstyle">Rekeningstelsels opzoeken</button>
+			<button onClick="stelselsRekeningen()" class="buttonstyle">Rekeningen opzoeken</button>
+			<button onClick="berekenenIntrest()" class="buttonstyle">Intrest berekenen</button>
 		 </div>
 		 
 		 <div id="row1" class="row">
@@ -163,6 +230,10 @@ else {document.getElementById("text4").innerHTML="Rekeningstelsel niet herkend. 
 			 
 			 <div id="text4" class="text">
 				Hier komt het rekeningstelsel!
+			 </div>
+			 
+			 <div id="text6" class="textIntrest">
+				Hier komt de intrestberekening!
 			 </div>
 		 </div><!-- /ROW2 -->
 	</div>

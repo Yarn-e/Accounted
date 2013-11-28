@@ -53,7 +53,6 @@ body {
 	margin-bottom: 15px;
 	border: 2.5px solid #404039;
 	border-radius: 3px;
-	
 }
 #text1 {
 	margin-right: 15px;
@@ -67,6 +66,9 @@ body {
 #text4 {
 	
 }
+#text5 {
+
+}
 .textRek {
 	margin-left: 50px;
 	float: left;
@@ -77,6 +79,18 @@ body {
 	margin-bottom: 15px;
 	border: 10px solid #333127;
 	border-radius: 6px;
+}
+.textIntrest {
+	float: left;
+	width: 500px;
+	background-color: #BFBFAA;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 15px;
+	border: 2.5px solid #404039;
+	border-radius: 3px;
+	margin-left: 15px;
+	height: 150px;
 }
 .Edit {
 	float: left;
